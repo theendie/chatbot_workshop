@@ -32,3 +32,4 @@ bin/hubot
 ```
 E divirta-se :P
 Se os astros estiverem alinhados, é para retornar, de forma randômica, as respostas estáticas que estão no script src/answers/static.js quando este robozinho reconhecer a palavra-chave "grettings". Se escrevermos "oi", deve retornar alguma resposta!
+
