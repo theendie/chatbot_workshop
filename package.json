@@ -1,0 +1,36 @@
+{
+  "name": "chatbot-witai",
+  "version": "0.0.1",
+  "author": "eduardomoroni",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eduardomoroni/chatbot-witai.git"
+  },
+  "scripts": {
+    "start": "npm run hubot",
+    "lint:check": "eslint ./src/ ./tests/",
+    "lint:fix": "npm run lint:check -- --fix",
+    "prettier": "prettier --write 'src/**/*.js'",
+    "hubot": "eval $(./dotenv.sh) && hubot --name 'chatbot-witai'"
+  },
+  "dependencies": {
+    "hubot": "2.19.0",
+    "node-wit": "5.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.2",
+    "eslint": "4.19.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-promise": "3.7.0",
+    "prettier": "1.11.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "1.1.2"
+  },
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1"
+  }
+}

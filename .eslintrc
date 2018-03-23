@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "es6": true,
+    "commonjs": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "off"
+  },
+  "plugins": ["prettier", "promise", "node"],
+  "extends": ["plugin:prettier/recommended", "eslint:recommended", "plugin:node/recommended"]
+}
