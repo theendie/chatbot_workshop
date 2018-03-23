@@ -1,12 +1,15 @@
 const { Weather } = require('./weather');
+const random = require('../utils/random');
 const { Greeting } = require('./greeting');
 const { Farewell } = require('./farewell');
-const {
-  answerInvalidQuestion,
-  answerError,
-} = require('../answers');
 
-const INVALID_ENTITY = 'Invalid Entity';
+const INVALID_ENTITY = 'Entidade nao encontrada'
+
+const invalidQuestion = [
+  'Nao entendi sua pergunta',
+  'Poderia perguntar outra coisa?',
+  'Hmm, nao entendi. Poderia perguntar novamente?',
+];
 
 const getEntity = entities => {
   if (entities.hasOwnProperty('greeting')) {
@@ -30,16 +33,12 @@ const answer = async parsedMessage => {
   try {
     const entity = getEntity(parsedMessage.entities);
     return await entity.answer();
-  } catch ({ message }) {
-    if (message === INVALID_ENTITY) {
-      return answerInvalidQuestion();
-    }
-
-    return answerError();
+  } catch (err) {
+    console.log('Aconteceu algum error: ', err)
+    return random(invalidQuestion);
   }
 };
 
 module.exports = {
-  answer,
-  INVALID_ENTITY,
+  answer
 };
