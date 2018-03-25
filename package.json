@@ -17,7 +17,8 @@
   },
   "scripts": {
     "start": "npm run hubot",
-    "lint:check": "eslint ./src/ ./tests/",
+    "docker:start": "sh ./start.sh",
+    "lint:check": "eslint ./src/",
     "lint:fix": "npm run lint:check -- --fix",
     "prettier": "prettier --write 'src/**/*.js'",
     "hubot": "eval $(./dotenv.sh) && hubot --name 'chatbot-witai'"
