@@ -1,8 +1,15 @@
-const { answerGreeting } = require('../answers');
+const random = require('../utils/random');
+
+const greetings = [
+  'Ola!',
+  'Como vai?',
+  'Tudo bem?',
+  'Olá, em que posso ajudar?',
+];
 
 class Greeting {
   answer() {
-    return answerGreeting();
+    return random(greetings);
   }
 }
 

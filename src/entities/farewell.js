@@ -1,8 +1,16 @@
-const { answerFarewell } = require('../answers');
+const random = require('../utils/random');
+
+const farewells = [
+  'Tchau!',
+  'Ate mais',
+  'Tchauzinho',
+  'Tenha um excelente dia!',
+  'Até a próxima',
+];
 
 class Farewell {
   answer() {
-    return answerFarewell();
+    return random(farewells);
   }
 }
 

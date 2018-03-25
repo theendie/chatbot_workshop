@@ -1,7 +1,7 @@
 const { answer } = require('./entities');
-const { parse } = require('./wit');
+const { processNaturalLanguage } = require('./wit');
 
 exports.answer = async message => {
-  const parsedMessage = await parse(message);
-  return answer(parsedMessage);
+  const proccessedMessage = await processNaturalLanguage(message);
+  return answer(proccessedMessage);
 };
