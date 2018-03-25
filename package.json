@@ -1,10 +1,19 @@
 {
   "name": "chatbot-witai",
   "version": "0.0.1",
-  "author": "eduardomoroni",
+  "contributors": [
+    {
+      "name": "Andressa Cruz",
+      "url": "https://github.com/asserdna/"
+    },
+    {
+      "name": "Eduardo Moroni",
+      "url": "https://github.com/eduardomoroni/"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:eduardomoroni/chatbot-witai.git"
+    "url": "git@github.com:asserdna/chatbot_workshop.git"
   },
   "scripts": {
     "start": "npm run hubot",

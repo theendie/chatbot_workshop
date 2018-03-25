@@ -8,7 +8,8 @@
 // Configuration:
 //  WIT_ACCESS_TOKEN
 //
-// Author:
+// Authors:
+//   asserdna
 //   eduardomoroni
 
 const { answer } = require('../parser');
