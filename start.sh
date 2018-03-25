@@ -8,7 +8,7 @@ docker build \
 
 docker run \
   -it \
-  -v /$(pwd):/usr/projects/chatbot-witai \
+  -v "/$(pwd):/usr/projects/chatbot-witai" \
   --env-file ".env" \
   -m "500M" \
   --memory-swap "500M" \
