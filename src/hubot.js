@@ -7,12 +7,13 @@
 //
 // Configuration:
 //  WIT_ACCESS_TOKEN
+//  ACCUWEATHER_APIKEY
 //
 // Authors:
 //   asserdna
 //   eduardomoroni
 
-const { answer } = require('../parser');
+const { answer } = require('./parser');
 const ANYTHING = /.*/i;
 
 async function answerMessage(res) {
