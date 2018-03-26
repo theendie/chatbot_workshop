@@ -8,13 +8,17 @@ class Weather {
     this.date = date;
   }
 
- async answer() {
+  async answer() {
     const client = new AccuWeatherClient();
     const cityForecast = await client.getWeatherForecast(this.city.name);
     const desiredForecast = cityForecast.getForecast(this.date);
     if (desiredForecast) {
-      let response = `A minima sera ${desiredForecast.minimum} e a maxima sera ${desiredForecast.maximum}. `;
-      response += `\nDe dia a previsão é de ${desiredForecast.description.day}. `;
+      let response = `A minima sera ${
+        desiredForecast.minimum
+      } e a maxima sera ${desiredForecast.maximum}. `;
+      response += `\nDe dia a previsão é de ${
+        desiredForecast.description.day
+      }. `;
       response += `De noite é ${desiredForecast.description.night}`;
       return response;
     }
@@ -36,7 +40,11 @@ class AccuWeatherClient {
   async getWeatherForecast(witAiCity) {
     const locationKey = witAiEntityMap[witAiCity];
     const apiKey = process.env.ACCUWEATHER_APIKEY;
-    const urlLocation = `${this.baseUrl}/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&language=${this.language}&metric=true`;
+    const urlLocation = `${
+      this.baseUrl
+    }/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&language=${
+      this.language
+    }&metric=true`;
     const response = await request(urlLocation);
     const objectResponse = JSON.parse(response);
     return new AccuWeatherMapper(objectResponse);
