@@ -7,6 +7,7 @@
 //
 // Configuration:
 //  WIT_ACCESS_TOKEN
+//  ACCUWEATHER_APIKEY
 //
 // Authors:
 //   asserdna
