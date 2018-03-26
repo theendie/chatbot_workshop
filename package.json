@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "hubot": "2.19.0",
-    "node-wit": "5.0.0"
+    "moment": "^2.21.0",
+    "node-wit": "5.0.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "babel-eslint": "8.2.2",
