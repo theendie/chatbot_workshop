@@ -2,8 +2,6 @@ const { Weather } = require('./weather');
 const { Greeting } = require('./greeting');
 const { NotFound } = require('./notFound');
 const { Farewell } = require('./farewell');
-const { City } = require('./city');
-const { CustomDate } = require('./date');
 
 const answer = async parsedMessage => {
   try {
@@ -25,9 +23,7 @@ const getEntity = entities => {
   }
 
   if (entities.hasOwnProperty('weather')) {
-    const city = new City(entities.city); //DEVEMOS PEGAR ISTO DO Weather
-    const customDate = new CustomDate(entities.datetime); //DEVEMOS PEGAR ISTO DO WITAI
-    return new Weather(city, customDate.extract());
+    return new Weather(entities.city, entities.datetime);
   }
 
   return new NotFound();

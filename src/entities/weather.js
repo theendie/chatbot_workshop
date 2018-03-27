@@ -1,16 +1,23 @@
 const request = require('request-promise');
 const moment = require('moment');
-const { InvalidDate } = require('./invalidDate');
 
 class Weather {
-  constructor(city, date) {
-    this.city = city;
-    this.date = date;
+  constructor(responseCity, responseDate) {
+    this.city = this.extractCity(responseCity);
+    this.date = this.extractDate(responseDate);
+  }
+
+  extractCity(city) {
+    return city ? city[0].value.toUpperCase() : 'POA';
+  }
+
+  extractDate(date) {
+    return date ? moment(date[0].value.split('T')[0]) : moment();
   }
 
   async answer() {
     const client = new AccuWeatherClient();
-    const cityForecast = await client.getWeatherForecast(this.city.name);
+    const cityForecast = await client.getWeatherForecast(this.city);
     const desiredForecast = cityForecast.getForecast(this.date);
     if (desiredForecast) {
       let response = `A minima sera ${
@@ -22,8 +29,7 @@ class Weather {
       response += `De noite é ${desiredForecast.description.night}`;
       return response;
     }
-    const invalidDate = new InvalidDate();
-    return invalidDate.answer();
+    return 'Não consigo prever para esta data :(';
   }
 }
 
