@@ -10,6 +10,8 @@ rode o hubot pelo Docker ou Node
 
 ### Docker
 - `sh ./start.sh`
+- Se voce está no windows, inicie a aplicaçao rodando `
+docker run -it --env-file ".env" -m "500M" --memory-swap "500M" chatbot-witai`
 
 ### Node
 - `npm install`
